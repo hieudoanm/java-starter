@@ -1,7 +1,7 @@
 # Java - Message Brokers
 
 - ActiveMQ
-- gRPC (In Progress)
+- gRPC
 - Kafka
 - RabbitMQ
 - Redis
