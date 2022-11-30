@@ -87,7 +87,9 @@ jobs:
           sudo apt-get install docker-ce
       - name: Build JAR
         run: ./gradlew jar
+        working-directory: ${{ matrix.project.working-directory }}
       - name: Docker Build
         run: docker build . --no-cache -t java-backend-starter:$IMAGE_TAG
+        working-directory: ${{ matrix.project.working-directory }}
         env:
           IMAGE_TAG: ${{ github.head_ref || github.ref_name }}.${{ steps.datetime.outputs.datetime }}.${{ steps.version.outputs.sha_short }}
